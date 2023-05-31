@@ -4,6 +4,10 @@
   --darker: #222222;
 }
 
+[rel="shortcut icon"] {
+  filter: invert(100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +42,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   transition: 0.5s;
+  z-index: 1;
 }
 
 nav a img {
@@ -53,8 +58,9 @@ nav a img {
 nav a img:hover {
   /* transform: rotate(3600000000deg); */
   /* width: 10rem; */
-  filter: invert(1%);
+  filter: none;
   background-color: var(--primary-color);
+  width: 3.4rem;
   border: none;
 }
 
@@ -185,8 +191,9 @@ nav ul li a:hover {
 .bg-video {
   position: absolute;
   right: 0;
-  bottom: 0;
   z-index: -1;
+  top: 0;
+  transition: 0.5;
 }
 
 /* scrollbar */
@@ -229,6 +236,12 @@ nav ul li a:hover {
 
 .slide img {
   height: 200px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.slide img:hover {
+  height: 230px;
 }
 
 .slider:hover .slide-track {
@@ -267,7 +280,6 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 }
 
 .judul-content3 span {
@@ -280,8 +292,19 @@ nav ul li a:hover {
 .isi-content3 {
   display: flex;
   flex-direction: row;
-  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 9rem;
   gap: 2rem;
+}
+
+.isi-content3 img {
+  transition: 0.3s;
+}
+
+.isi-content3 img:hover {
+  width: 270px;
+  height: 220px;
 }
 
 /* container kiri */
@@ -290,7 +313,6 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 5rem 0;
 }
 
 .kiri {
@@ -308,8 +330,8 @@ nav ul li a:hover {
 }
 
 .kiri img {
-  width: 15rem;
-  height: 10rem;
+  width: 250px;
+  height: 200px;
   border-radius: 5px;
 }
 
@@ -325,7 +347,7 @@ nav ul li a:hover {
   gap: 14rem;
 }
 
-.titik{
+.titik {
   padding: 2px;
   border: 5px solid var(--darker);
   border-radius: 50%;
@@ -337,7 +359,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .kanan {
@@ -354,14 +376,100 @@ nav ul li a:hover {
 } */
 
 .kanan img {
-  width: 15rem;
-  height: 10rem;
+  width: 250px;
+  height: 200px;
   border-radius: 5px;
 }
 /* content 3 end */
 
+/* GALLERY PAGE */
+/* content gallery start */
+.content-gallery {
+  background-color: var(--invert-primary-color);
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.photo-gallery {
+  width: 90%;
+  padding: 6rem 0;
+  display: flex;
+  gap: 30px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.photo img:hover {
+  width: 103%;
+  height: 103%;
+}
+
+/* content gallery end */
+/* GALLERY END */
+
+/* LOCATION START */
+.content-location{
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--invert-primary-color);
+  gap: 2rem;
+  font-weight: 800;
+}
+
+.judul-cont-loc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-location .judul-cont-loc span{
+  font-size: 35px;
+  color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  transition: .5s;
+  letter-spacing: 1px;
+}
+
+.content-location span:hover{
+  letter-spacing: 3px;
+  cursor: default;
+}
+
+.map iframe{
+  border-radius: 20px;
+}
+
+.content-location a{
+  border: 3px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+
+/* LOCATION END */
+
 /* footer start */
-footer{
+footer {
   width: 100%;
   height: 40vh;
   display: flex;
@@ -371,7 +479,7 @@ footer{
 }
 
 /* kiri */
-.footer-kiri{
+.footer-kiri {
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -381,7 +489,7 @@ footer{
   gap: 1rem;
 }
 
-.judul-footer a{
+.judul-footer a {
   color: var(--primary-color);
   text-decoration: none;
   font-size: 2rem;
@@ -389,7 +497,7 @@ footer{
   transition: 0.5s;
 }
 
-.judul-footer a:hover{
+.judul-footer a:hover {
   letter-spacing: 1px;
 }
 
@@ -398,29 +506,35 @@ footer{
   flex-direction: column;
 }
 
-.bacotan span{
+.bacotan span {
   font-family: "Poppins";
   letter-spacing: 2px;
   font-size: 0.9rem;
+  width: 40%;
+  transition: 0.3s;
 }
 
-.sosmed span{
+.bacotan span:hover {
+  cursor: default;
+  letter-spacing: 3px;
+}
+
+.sosmed span {
   font-family: "Poppins";
   transition: 0.5s;
   letter-spacing: 3px;
 }
 
-.sosmed span:hover{
+.sosmed span:hover {
   letter-spacing: 5px;
   cursor: default;
 }
 
-.logo-sosmed{
+.logo-sosmed {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 1.2rem;
   width: 15%;
 }
 
@@ -428,17 +542,21 @@ footer{
   transition: 0.5s;
 }
 
-.logo-sosmed a svg:hover{
+.logo-sosmed a svg:hover {
   width: 35px;
   height: 35px;
 }
 
-.alr{
+.alr {
   color: #888888;
 }
 
+.alr:hover {
+  cursor: default;
+}
+
 /* kanan */
-.footer-kanan{
+.footer-kanan {
   display: flex;
   width: 50%;
   flex-direction: column;
@@ -458,13 +576,11 @@ footer{
   width: 150%;
 }
 
-.footer-kanan a:hover{
+.footer-kanan a:hover {
   letter-spacing: 5px;
 }
 
 /* footer end */
-
-
 @media (min-aspect-ratio: 16/9) {
   .bg-video {
     width: 100%;
